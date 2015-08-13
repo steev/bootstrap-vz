@@ -12,3 +12,9 @@ jessie:
 sid:
   amd64: linux-image-amd64
   i386: linux-image-686-pae
+sana:
+  amd64: linux-image-amd64
+  i386: linux-image-686-pae
+moto:
+  amd64: linux-image-amd64
+  i386: linux-image-686-pae

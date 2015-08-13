@@ -9,12 +9,10 @@ properties:
       release:
         type: string
         enum:
-        - wheezy
         - stable
-        - jessie
-        - testing
-        - sid
-        - unstable
+        - oldstable
+        - sana
+        - moto
   plugins:
     type: object
     properties:

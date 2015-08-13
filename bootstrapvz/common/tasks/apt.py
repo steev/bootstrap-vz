@@ -31,9 +31,9 @@ class AddDefaultSources(Task):
 		if include_src:
 			info.source_lists.add('main', 'deb-src {apt_mirror} {system.release} ' + components)
 		if info.manifest.release != sid:
-			info.source_lists.add('main', 'deb     http://security.debian.org/  {system.release}/updates ' + components)
+			info.source_lists.add('main', 'deb     http://security.kali.org/  {system.release}/updates ' + components)
 			if include_src:
-				info.source_lists.add('main', 'deb-src http://security.debian.org/  {system.release}/updates ' + components)
+				info.source_lists.add('main', 'deb-src http://security.kali.org/  {system.release}/updates ' + components)
 			info.source_lists.add('main', 'deb     {apt_mirror} {system.release}-updates ' + components)
 			if include_src:
 				info.source_lists.add('main', 'deb-src {apt_mirror} {system.release}-updates ' + components)
@@ -52,6 +52,10 @@ class AddBackports(Task):
 			logging.getLogger(__name__).info(msg)
 		elif info.manifest.release == unstable:
 			logging.getLogger(__name__).info('There are no backports for sid/unstable')
+		elif info.manfiest.release == sana:
+			logging.getLogger(__name__).info('There are no backports for sana')
+		elif info.manifest.release == moto:
+			logging.getLogger(__name__).info('There are no backports for moto')
 		else:
 			info.source_lists.add('backports', 'deb     {apt_mirror} {system.release}-backports main')
 			info.source_lists.add('backports', 'deb-src {apt_mirror} {system.release}-backports main')
